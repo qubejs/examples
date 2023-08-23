@@ -8,6 +8,7 @@ const siteConfig = require('../../apps/server/site.config');
 new StaticContentBuilder({
   serverConfig: {
     contentPath: path.resolve('apps/server/ho'),
+    rootApp: path.resolve('apps/server'),
     serverPath: '/ho/*',
     siteConfig,
     appConfig: {
