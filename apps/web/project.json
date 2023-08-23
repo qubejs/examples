@@ -44,6 +44,12 @@
         }
       }
     },
+
+    "dist": {
+      "command": "node tools/scripts/build-pages.js && node tools/scripts/build-web.js",
+      "dependsOn": ["build"]
+    },
+
     "serve": {
       "executor": "@nx/webpack:dev-server",
       "defaultConfiguration": "development",
