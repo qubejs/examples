@@ -13,6 +13,7 @@
         "outputPath": "dist/apps/web",
         "index": "apps/web/src/index.html",
         "baseHref": "/",
+        "outputHashing":"media",
         "main": "apps/web/src/main.tsx",
         "tsConfig": "apps/web/tsconfig.app.json",
         "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
@@ -44,6 +45,10 @@
         }
       }
     },
+    "build-test" : {
+      "command": "node tools/scripts/test.js",
+      "args":"--ver=2002"
+    },
 
     "dist": {
       "command": "node tools/scripts/build-pages.js && node tools/scripts/build-web.js",
@@ -58,6 +63,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "web:build",
+        "proxyConfig": "apps/web/proxy.config.json",
         "hmr": true
       },
       "configurations": {

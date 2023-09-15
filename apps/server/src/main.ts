@@ -33,6 +33,7 @@ var cmsSever = new ContentServer(
   },
   app
 );
+cmsSever.init();
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
