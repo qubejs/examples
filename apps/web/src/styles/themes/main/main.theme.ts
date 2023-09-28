@@ -51,6 +51,7 @@ const config: any = {
       },
     },
     MuiPaper: {
+      root: {},
     },
     MuiButton: {
       styleOverrides: {
@@ -109,6 +110,7 @@ const config: any = {
       main: variables.brandPrimary,
       light: variables.brandPrimaryLight,
       dark: variables.brandPrimaryDarkest,
+      color: '#fff',
       contrastText: colors.primaryContrast,
     },
     secondary: {
@@ -118,10 +120,12 @@ const config: any = {
       contrastText: colors.secondaryContrast,
     },
   },
-  spacing: (factor:any) => [0, 4, 8, 16, 32, 64][factor],
+  spacing: (factor: any) => [0, 4, 8, 16, 32, 64][factor],
+  shadows: Array(25).fill('none'),
   typography: {
     fontFamily: 'MarkOT',
     fontSize: 12,
+    useNextVariants: true,
   },
 };
 

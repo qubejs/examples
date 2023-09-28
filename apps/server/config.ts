@@ -3,7 +3,7 @@ export default {
     path: '/ho/root',
   },
   urls: {
-    protected: [ '/content/dynamic/app/*'],
+    protected: ['/ho/app/*', '/content/dynamic/app/*'],
   },
   urlMapping: {
     homeDashboard: '/ho/app/home',

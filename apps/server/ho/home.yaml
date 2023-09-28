@@ -1,6 +1,6 @@
 title: Sandbox Home
 template: apps/core/templates/page
-className: sq-content-page--full-width sq-content-page--with-fixed-nav
+className: container-fluid sq-content-page--with-fixed-nav
 layout: apps/layouts/spa
 containerTemplate: Homepage
 hook:
@@ -20,7 +20,7 @@ items:
             - type: equals
               matchValue: true
   - component: Wrapper
-    className: root-login-form
+    className: container-fluid
     items:
       - header: |
           ##moduleData.loginHeaderMessage##
@@ -62,7 +62,14 @@ items:
             size: large
             url:  /api/v1/login
             method: post
-            postHook: auth.authenticate
+            defaultResponse:
+              success:
+                notification: 
+                  message: Logged in 
+              error:
+                notification:
+                  message: Loggedin failed
+                  type: error
             params:
               email: .login.email
               password: .login.password
