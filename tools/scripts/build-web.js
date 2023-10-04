@@ -4,7 +4,7 @@ const paramsEnv = new ArgsReader().get();
 const env = paramsEnv.env || 'production';
 process.env.CONFIG_ENV = env;
 
-const sendAppConfig = require('../../apps/server/config/app-config');
+const sendAppConfig = require('../../apps/server/src/config/app-config');
 const chalk = require('chalk');
 
 console.log(chalk.green('env = ' + env));

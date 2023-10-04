@@ -6,21 +6,20 @@
 import express from 'express';
 import * as path from 'path';
 import { ContentServer } from '@qubejs/cms';
-import siteConfig from '../site.config';
-import config from '../config/environment';
+import siteConfig from './site.config';
+import config from './config/environment';
 const app = express();
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
-console.log(path.resolve('./apps/server/ho'));
 // Content server
 var cmsSever = new ContentServer(
   {
-    contentPath: path.resolve('./apps/server/ho'),
+    contentPath: path.join(__dirname, 'ho'),
     serverPath: '/ho/*',
-    rootApp: path.resolve('./apps/server/'),
-    damAssets: path.resolve('./apps/server/dam'),
-    clientLibs: path.resolve('./apps/server/clientlibs'),
+    rootApp: path.join(__dirname),
+    damAssets:path.join(__dirname, 'dam'),
+    clientLibs: path.join(__dirname, 'clientlibs'),
     userData: () => {
       return {
         tenantCode: process.env.TENANT_CODE || 'NOT_DEFINED',
@@ -37,6 +36,6 @@ cmsSever.init();
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+  console.log(`Listening at http://localhost:${port}/ho/home`);
 });
 server.on('error', console.error);

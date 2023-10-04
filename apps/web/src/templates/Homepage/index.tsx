@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { utils } from '@qubejs/web-react';
 import './homepage.scss';
@@ -30,7 +29,7 @@ class Homepage extends BaseContainer {
     props = { ...siteMap?.siteMap?.globalNavigation };
     return (
       <div
-        className={`sq-content-page homepage sq-content-page--header-footer-body ${
+        className={`sq-content-page homepage sq-content-page--with-fixed-nav sq-content-page--header-footer-body ${
           pageData.templateClassName || ''
         }`}
       >

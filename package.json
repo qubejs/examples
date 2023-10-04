@@ -7,10 +7,10 @@
   "dependencies": {
     "@mui/lab": "^5.0.0-alpha.81",
     "@mui/x-date-pickers": "^6.14.0",
-    "@qubejs/cms": "^0.1.2",
-    "@qubejs/core": "^0.1.2",
-    "@qubejs/scripts": "^0.1.2",
-    "@qubejs/web-react": "^0.1.2",
+    "@qubejs/cms": "^0.1.7",
+    "@qubejs/core": "^0.1.7",
+    "@qubejs/scripts": "^0.1.7",
+    "@qubejs/web-react": "^0.1.7",
     "@reduxjs/toolkit": "^1.8.3",
     "@swc/helpers": "~0.5.0",
     "axios": "^1.0.0",
@@ -79,6 +79,7 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.1.3",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "webpack-cli": "^5.1.4"
   }
 }
