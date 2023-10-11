@@ -28,7 +28,7 @@ module.exports = {
   },
 
   server: {
-    host: 'http://dev.crm-sandbox.com',
+    host: 'http://localhost:3333',
   },
   cookie: {
     secret: 'homesecuret',

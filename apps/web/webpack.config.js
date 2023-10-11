@@ -5,11 +5,16 @@ const { withReact } = require('@nx/react');
 const packageJson = require('../../package.json');
 
 const VERSION = process.env.VERSION || packageJson.version;
+const PUBLIC_URL = process.env.PUBLIC_URL;
 // Nx plugins for webpack.
 module.exports = composePlugins(withNx(), withReact(), (config) => {
   if (VERSION) {
     console.log(chalk.green('building for version:') + chalk.cyan(VERSION));
   }
+  if (PUBLIC_URL) {
+    config.output.publicPath = PUBLIC_URL;
+  }
+  console.log(config.output);
   config.output.filename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
   config.output.chunkFilename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
   config.plugins[5].options.filename = `[name]${

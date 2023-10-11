@@ -3,6 +3,7 @@ var path = require('path');
 // const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VERSION = process.env.VERSION;
+const PUBLIC_URL = process.env.PUBLIC_URL || '/';
 
 module.exports = {
   entry: {
@@ -14,6 +15,7 @@ module.exports = {
     path: process.env.NODE_ENV !== 'production' ? paths.webAssets : paths.distWeb,
     filename: `static/js/[name]/out.js`,
     assetModuleFilename: `media/[hash][ext][query]`,
+    publicPath: PUBLIC_URL,
   },
   resolve: {
     alias: {

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="2" id="com.qubejs.app" version="1.0.1" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>App</name>
+    <description>
+        Sample App
+    </description>
+    <author email="hello@qubejs.com" href="https://www.qubejs.com">
+        Qubejs
+    </author>
+    <content src="index.html"/>
+    <access origin="connect.facebook.net"/>
+    <access origin="*localhost:3333"/>
+    <access origin="*.qubejs.com"/>
+    <access origin="*.google.com"/>
+    <access origin="*.google-analytics.com"/>
+    <access origin="*.googletagmanager.com"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="tel:*"/>
+    <allow-intent href="sms:*"/>
+    <allow-intent href="mailto:*"/>
+    <allow-intent href="geo:*"/>
+    <allow-intent href="gap:*"/>
+    <allow-intent href="file:*"/>
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA"/>
+            <uses-feature android:name="android.hardware.camera"/>
+            <uses-feature android:name="android.hardware.camera.autofocus"/>
+        </config-file>
+        <allow-intent href="market:*"/>
+        <resource-file src="res/values/colors.xml" target="/app/src/main/res/values/colors.xml"/>
+        <!-- other properties here -->
+        <preference name="AndroidInsecureFileModeEnabled" value="true"/>
+        <icon background="@color/background" density="ldpi" foreground="res/android/mipmap-ldpi.png"/>
+        <icon background="@color/background" density="mdpi" foreground="res/android/mipmap-mdpi.png"/>
+        <icon background="@color/background" density="hdpi" foreground="res/android/mipmap-hdpi.png"/>
+        <icon background="@color/background" density="xhdpi" foreground="res/android/mipmap-xhdpi.png"/>
+        <icon background="@color/background" density="xxhdpi" foreground="res/android/mipmap-xxhdpi.png"/>
+        <icon background="@color/background" density="xxxhdpi" foreground="res/android/mipmap-xxxhdpi.png"/>
+
+        <icon src="res/android/drawable-land-hdpi.png" density="land-hdpi"/>
+        <icon src="res/android/drawable-land-ldpi.png" density="land-ldpi"/>
+        <icon src="res/android/drawable-land-mdpi.png" density="land-mdpi"/>
+        <icon src="res/android/drawable-land-xhdpi.png" density="land-xhdpi"/>
+        <icon src="res/android/drawable-land-xxhdpi.png" density="land-xxhdpi"/>
+        <icon src="res/android/drawable-land-xxxhdpi.png" density="land-xxxhdpi"/>
+
+        <icon src="res/android/drawable-port-hdpi.png" density="port-hdpi"/>
+        <icon src="res/android/drawable-port-ldpi.png" density="port-ldpi"/>
+        <icon src="res/android/drawable-port-mdpi.png" density="port-mdpi"/>
+        <icon src="res/android/drawable-port-xhdpi.png" density="port-xhdpi"/>
+        <icon src="res/android/drawable-port-xxhdpi.png" density="port-xxhdpi"/>
+        <icon src="res/android/drawable-port-xxxhdpi.png" density="port-xxxhdpi"/>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*"/>
+        <allow-intent href="itms-apps:*"/>
+        <icon height="180" src="res/ios/icons/icon-60@3x.png" width="180"/>
+        <icon height="60" src="res/ios/icons/icon-60.png" width="60"/>
+        <icon height="20" src="res/ios/icons/icon-20.png" width="20"/>
+        <icon height="120" src="res/ios/icons/icon-60@2x.png" width="120"/>
+        <icon height="76" src="res/ios/icons/icon-76.png" width="76"/>
+        <icon height="48" src="res/ios/icons/icon-24@2x.png" width="48"/>
+        <icon height="55" src="res/ios/icons/icon-27.5@2x.png" width="55"/>
+        <icon height="152" src="res/ios/icons/icon-76@2x.png" width="152"/>
+        <icon height="40" src="res/ios/icons/icon-40.png" width="40"/>
+        <icon height="66" src="res/ios/icons/icon-33@2x.png" width="66"/>
+        <icon height="92" src="res/ios/icons/icon-46@2x.png" width="92"/>
+        <icon height="216" src="res/ios/icons/icon-108@2x.png" width="216"/>
+        <icon height="234" src="res/ios/icons/icon-117@2x.png" width="234"/>
+        <icon height="80" src="res/ios/icons/icon-40@2x.png" width="80"/>
+        <icon height="88" src="res/ios/icons/icon-44@2x.png" width="88"/>
+        <icon height="216" src="res/ios/icons/icon-108@2x.png" width="216"/>
+        <icon height="57" src="res/ios/icons/icon.png" width="57"/>
+        <icon height="114" src="res/ios/icons/icon@2x.png" width="114"/>
+        <icon height="72" src="res/ios/icons/icon-72.png" width="72"/>
+        <icon height="144" src="res/ios/icons/icon-72@2x.png" width="144"/>
+        <icon height="172" src="res/ios/icons/icon-86@2x.png" width="172"/>
+        <icon height="196" src="res/ios/icons/icon-98@2x.png" width="196"/>
+        <icon height="1024" src="res/ios/icons/icon-1024.png" width="1024"/>
+        <icon height="216" src="res/ios/icons/icon-108@2x.png" width="216"/>
+        <icon height="167" src="res/ios/icons/icon-167.png" width="167"/>
+        <icon height="29" src="res/ios/icons/icon-small.png" width="29"/>
+        <icon height="58" src="res/ios/icons/icon-small@2x.png" width="58"/>
+        <icon height="87" src="res/ios/icons/icon-small@3x.png" width="87"/>
+        <icon height="50" src="res/ios/icons/icon-50.png" width="50"/>
+        <icon height="100" src="res/ios/icons/icon-50@2x.png" width="100"/>
+        <icon height="167" src="res/ios/icons/icon-83.5@2x.png" width="167"/>
+
+    </platform>
+    <preference name="DisallowOverscroll" value="true"/>
+    <plugin name="cordova-plugin-statusbar" source="npm"/>
+    <preference name="AndroidXEnabled" value="true"/>
+    <preference name="NativeXHRLogging" value="none"/>
+    <preference name="AllowUntrustedCerts" value="true"/>
+    <preference name="InterceptRemoteRequests" value="all"/>
+    <preference name="allowFileAccessFromFileURLs" value="true"/>
+    <preference name="allowUniversalAccessFromFileURLs" value="true"/>
+    <preference name="StatusBarOverlaysWebView" value="false"/>
+    <preference name="StatusBarBackgroundColor" value="#ffffff"/>
+    <preference name="StatusBarStyle" value="default"/>
+    <preference name="android-targetSdkVersion" value="33"/>
+</widget>

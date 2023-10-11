@@ -12,7 +12,7 @@ module.exports = {
     },
   },
   server: {
-    host: 'http://localhost:6004',
+    host: 'http://localhost:3333',
   },
   log: 'debug',
 };

@@ -9,6 +9,7 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 // config after eject: we're in ./config/
 module.exports = {
   dist: resolveApp('dist'),
+  cordovaWww: resolveApp('cordova/www'),
   webSrc: resolveApp('apps/web/src'),
   webStyles: resolveApp('apps/web/src/styles'),
   distWeb: resolveApp('dist/apps/web'),

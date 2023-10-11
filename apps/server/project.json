@@ -27,6 +27,7 @@
           }
         ],
         "isolatedConfig": true,
+        "generatePackageJson": true,
         "webpackConfig": "apps/server/webpack.config.js"
       },
       "configurations": {

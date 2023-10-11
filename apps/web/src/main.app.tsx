@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { cordova } from '@qubejs/web-react';
 import App from './app/app';
 import './styles/themes/main/index.scss';
@@ -20,13 +20,15 @@ class AppRoot {
     if (!direct) {
       this.initApp();
     }
+    console.log('app initialized')
     const root = ReactDOM.createRoot(
       document.getElementById('root') as HTMLElement
     );
+    const RouterToUse = cordova.isApp() ? HashRouter : BrowserRouter;
     root.render(
-      <BrowserRouter>
+      <RouterToUse>
         <App />
-      </BrowserRouter>
+      </RouterToUse>
     );
   }
 }
