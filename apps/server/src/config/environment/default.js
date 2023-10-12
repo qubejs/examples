@@ -11,9 +11,9 @@ module.exports = {
   email: {
     enabled: false,
     loggerEnabled: false,
-    defaultFrom: 'donotreply@hlrapp.com',
+    defaultFrom: 'donotreply@app.com',
     defaultFromName: 'REPM',
-    messageBox: 'info@hlrapp.com',
+    messageBox: 'info@app.com',
   },
   text: {
     enabled: false,
@@ -67,7 +67,7 @@ module.exports = {
     username: '',
     password: '',
     port: '27017',
-    dbname: 'crm-homeowner-local',
+    dbname: 'crm-sample-local',
     host: 'localhost',
   },
   log: 'debug',

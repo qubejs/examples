@@ -5,10 +5,10 @@ module.exports =  {
   },
   apiPrefix: {
     '/api/v1': {
-      prefix: process.env.API_PREFIX || 'https://dev.homeowner.service.hlrapp.com',
+      prefix: process.env.API_PREFIX || 'https://dev.sample.service.app.com',
     },
   },
   server: {
-    host: process.env.HOST_URL || 'https://dev.homeowner.hlrapp.com',
+    host: process.env.HOST_URL || 'https://dev.sample.app.com',
   },
 };
