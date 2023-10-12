@@ -10,7 +10,7 @@ console.log(chalk.green('env = ' + config.env));
 console.log(chalk.yellow('building with host:' + config.server.host));
 const androidBuilder = new AndroidBuild({
   host: config.server.host, // for android build
-  version:  process.env.VERSION || packageJson.version,
+  version:  packageJson.version,
   appConfig: {
     ...sendAppConfig,
     source: 'Android',

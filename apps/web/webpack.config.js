@@ -4,7 +4,7 @@ const { composePlugins, withNx } = require('@nx/webpack');
 const { withReact } = require('@nx/react');
 const packageJson = require('../../package.json');
 
-const VERSION = process.env.VERSION || packageJson.version;
+const VERSION = packageJson.version;
 const PUBLIC_URL = process.env.PUBLIC_URL;
 // Nx plugins for webpack.
 module.exports = composePlugins(withNx(), withReact(), (config) => {

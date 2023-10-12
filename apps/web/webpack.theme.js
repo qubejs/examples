@@ -1,8 +1,9 @@
-var paths = require('../../tools/scripts/paths');
 var path = require('path');
 // const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const VERSION = process.env.VERSION;
+var packageJson = require('../../package.json');
+var paths = require('../../tools/scripts/paths');
+const VERSION = packageJson.version;
 const PUBLIC_URL = process.env.PUBLIC_URL || '/';
 
 module.exports = {

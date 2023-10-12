@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 apps/web/src/assets/static
+.env

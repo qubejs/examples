@@ -124,6 +124,14 @@
       "command": "node tools/scripts/build-android.js",
       "dependsOn": ["build-cordova"]
     },
+    "export-android": {
+      "command": "cd cordova && cordova build android",
+      "dependsOn": ["dist-android"]
+    },
+    "export-ios": {
+      "command": "cd cordova && cordova build ios",
+      "dependsOn": ["dist-ios"]
+    },
 
     "serve": {
       "executor": "@nx/webpack:dev-server",

@@ -67,8 +67,7 @@ const sendAppConfig = require('../../apps/server/src/config/app-config');
 
 const iosBuilder = new IosBuild({
   host: config.server.host,
-//   host: '',
-  version: process.env.VERSION || packageJson.version,
+  version: packageJson.version,
   appConfig: {
     ...sendAppConfig,
     source: 'iOS',
