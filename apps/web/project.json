@@ -13,6 +13,7 @@
         "outputPath": "dist/apps/web",
         "index": "apps/web/src/index.html",
         "baseHref": "/",
+        "deployUrl": "/",
         "outputHashing": "media",
         "main": "apps/web/src/main.tsx",
         "tsConfig": "apps/web/tsconfig.app.json",
@@ -91,11 +92,10 @@
       "args": "--ver=2002"
     },
     "build-themes": {
-      "command": "webpack --config apps/web/webpack.theme.js",
-      "args": "--mode=production"
+      "command": "webpack --config apps/web/webpack.theme.js --mode=production"
     },
     "build-scss": {
-      "command": "node tools/scripts/build-scss.js",
+      "command": "node tools/scripts/build-scss.js"
     },
     "build-themes-local": {
       "command": "webpack --config apps/web/webpack.theme.js"

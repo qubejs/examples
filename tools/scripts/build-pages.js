@@ -1,4 +1,5 @@
 const path = require('path');
+const { utils } = require('@qubejs/core');
 const { StaticContentBuilder } = require('@qubejs/cms');
 const paths = require('./paths');
 const config = require('../../apps/server/src/config/environment');
@@ -21,7 +22,7 @@ new StaticContentBuilder({
     mode: 'production',
   },
   output: paths.distWeb,
-  ignoreFolder: process.env.PUBLIC_URL?.substr(1),
+  ignoreFolder: utils.path.ensureNoSlashAtEnd(process.env.PUBLIC_URL?.substr(1)),
 })
   .build()
   .then(() => {

@@ -19,6 +19,32 @@
           "apps/server/src/assets",
           "apps/server/src/apps",
           "apps/server/src/ho",
+          "apps/server/src/dam"
+        ],
+        "isolatedConfig": true,
+        "generatePackageJson": true,
+        "webpackConfig": "apps/server/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "dist-server": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["web:build-server"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/server",
+        "main": "apps/server/src/main.ts",
+        "tsConfig": "apps/server/tsconfig.app.json",
+        "assets": [
+          "apps/server/src/assets",
+          "apps/server/src/apps",
+          "apps/server/src/ho",
           "apps/server/src/dam",
           {
             "glob": "dist/apps/web",
@@ -37,7 +63,7 @@
     },
     "dist": {
       "command": "node -v",
-      "dependsOn": ["build"]
+      "dependsOn": ["dist-server"]
     },
     "serve": {
       "executor": "@nx/js:node",

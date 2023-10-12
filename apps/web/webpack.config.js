@@ -5,7 +5,7 @@ const { withReact } = require('@nx/react');
 const packageJson = require('../../package.json');
 
 const VERSION = packageJson.version;
-const PUBLIC_URL = process.env.PUBLIC_URL;
+const PUBLIC_URL = process.env.PUBLIC_URL || '/';
 // Nx plugins for webpack.
 module.exports = composePlugins(withNx(), withReact(), (config) => {
   if (VERSION) {
@@ -16,10 +16,10 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
   }
   config.output.filename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
   config.output.chunkFilename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
-  config.plugins[5].options.filename = `[name]${
+  config.plugins[5].options.filename = `static/[name]${
     VERSION ? `.${VERSION}` : ''
   }.css`;
-  config.plugins[5].options.chunkFilename = `[name]${
+  config.plugins[5].options.chunkFilename = `static/[name]${
     VERSION ? `.${VERSION}` : ''
   }.css`;
   // Update the webpack config as needed here.

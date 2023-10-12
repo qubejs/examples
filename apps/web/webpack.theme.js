@@ -6,6 +6,7 @@ var paths = require('../../tools/scripts/paths');
 const VERSION = packageJson.version;
 const PUBLIC_URL = process.env.PUBLIC_URL || '/';
 
+
 module.exports = {
   entry: {
     gray: [`./apps/web/src/styles/themes/ice/index.scss`],
@@ -13,7 +14,7 @@ module.exports = {
   mode: 'production',
   // devtool: 'source-map',
   output: {
-    path: process.env.NODE_ENV !== 'production' ? paths.webAssets : paths.distWeb,
+    path: process.argv.indexOf('--mode=production') === -1 ? paths.webAssets : paths.distWeb,
     filename: `static/js/[name]/out.js`,
     assetModuleFilename: `media/[hash][ext][query]`,
     publicPath: PUBLIC_URL,
@@ -66,8 +67,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: `[name]${VERSION ? `.${VERSION}` : ''}.css`,
-      chunkFilename: `[id]${VERSION ? `.${VERSION}` : ''}.css`,
+      filename: `static/[name]${VERSION ? `.${VERSION}` : ''}.css`,
+      chunkFilename: `static/[id]${VERSION ? `.${VERSION}` : ''}.css`,
     }),
   ],
 };
