@@ -14,7 +14,6 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
   if (PUBLIC_URL) {
     config.output.publicPath = PUBLIC_URL;
   }
-  console.log(config.output);
   config.output.filename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
   config.output.chunkFilename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
   config.plugins[5].options.filename = `[name]${

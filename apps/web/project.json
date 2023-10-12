@@ -116,8 +116,12 @@
         "baseHref": "./"
       }
     },
-    "dist-app": {
+    "dist-ios": {
       "command": "node tools/scripts/build-ios.js",
+      "dependsOn": ["build-cordova"]
+    },
+    "dist-android": {
+      "command": "node tools/scripts/build-android.js",
       "dependsOn": ["build-cordova"]
     },
 

@@ -1,17 +1,17 @@
 {
   "android": {
       "debug": {
-          "keystore": "hlrinspectiondev.keystore",
-          "storePassword": "key^^hlrinspection.com",
-          "alias": "hlrinspectiondev",
-          "password" : "dev^^hlrinspection.com",
+          "keystore": "app.keystore",
+          "storePassword": "key^^app.com",
+          "alias": "app",
+          "password" : "dev^^app.com",
           "keystoreType": ""
       },
       "release": {
           "keystore": "certificates/upload-keystore.keystore",
-          "storePassword": "key^^hlrinspection.com",
-          "alias": "hlrinspection",
-          "password" : "key^^hlrinspection.com",
+          "storePassword": "key^^app.com",
+          "alias": "app",
+          "password" : "key^^app.com",
           "keystoreType": ""
       }
   }
