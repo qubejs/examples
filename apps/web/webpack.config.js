@@ -12,6 +12,7 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
     console.log(chalk.green('building for version:') + chalk.cyan(VERSION));
   }
   if (PUBLIC_URL) {
+    console.log(chalk.green('building for publicUrl:') + chalk.cyan(PUBLIC_URL));
     config.output.publicPath = PUBLIC_URL;
   }
   config.output.filename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
