@@ -8,6 +8,7 @@ import * as path from 'path';
 import { ContentServer } from '@qubejs/cms';
 import siteConfig from './site.config';
 import config from './config/environment';
+import appConfig from './config/app-config';
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'assets')));
@@ -26,6 +27,7 @@ var cmsSever = new ContentServer(
         sitekey: process.env.sitekey || 'NOT_DEFINED',
       };
     },
+    appConfig,
     envConfig: config,
     mode: config.env,
     siteConfig: siteConfig,
