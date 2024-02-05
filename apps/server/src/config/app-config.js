@@ -10,5 +10,5 @@ module.exports = {
   tenantCode: config.tenantCode || 'Sample',
   siteMap: siteConfig,
   publicUrl: config.publicUrl,
-  module: '',
+  module: 'ho',
 };

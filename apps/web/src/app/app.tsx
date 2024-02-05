@@ -64,7 +64,7 @@ export function App() {
         elem.setAttribute('rel', `stylesheet`);
         elem.setAttribute(
           'href',
-          `/static/css/${newTHeme}.${utils.win.getWindow().APP_CONFIG.appVersion}.css`
+          `/static/${newTHeme}.${utils.win.getWindow().APP_CONFIG.appVersion}.css`
         );
         document.head.appendChild(elem);
       }

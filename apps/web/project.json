@@ -12,8 +12,8 @@
         "compiler": "babel",
         "outputPath": "dist/apps/web",
         "index": "apps/web/src/index.html",
-        "baseHref": "/",
-        "deployUrl": "/",
+        "baseHref": "/ho/",
+        "deployUrl": "/ho/",
         "outputHashing": "media",
         "main": "apps/web/src/main.tsx",
         "tsConfig": "apps/web/tsconfig.app.json",
@@ -110,11 +110,11 @@
     },
     "dist": {
       "command": "node tools/scripts/build-pages.js && node tools/scripts/build-web.js",
-      "dependsOn": ["build", "build-scss", "build-themes"],
-      "options": {
-        "outputPath": "dist/apps/web",
-        "baseHref": "./"
-      }
+      "dependsOn": ["build", "build-scss", "build-themes"]
+    },
+    "dist:local": {
+      "command": "node tools/scripts/dist-local.js",
+      "dependsOn": ["dist"]
     },
     "dist-ios": {
       "command": "node tools/scripts/build-ios.js",
