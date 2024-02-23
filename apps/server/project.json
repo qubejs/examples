@@ -63,7 +63,7 @@
     },
     "dist": {
       "command": "node -v",
-      "dependsOn": ["dist-server"]
+      "dependsOn": ["web:dist", "dist-server"]
     },
     "serve": {
       "executor": "@nx/js:node",
