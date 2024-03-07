@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "update:core": "npm i @qubejs/cms@next @qubejs/core@next @qubejs/scripts@next @qubejs/web-react@next --legacy-peer-deps"
+    "update:core": "npm i @qubejs/cms@next @qubejs/core@next @qubejs/scripts@next @qubejs/web-react@next @qubejs/ui-material-base@next --legacy-peer-deps"
   },
   "private": true,
   "dependencies": {
@@ -15,10 +15,11 @@
     "@mui/styles": "^5.8.0",
     "@mui/x-charts": "^6.19.3",
     "@mui/x-date-pickers": "^5.0.0-beta.5",
-    "@qubejs/cms": "^0.3.0-next.6",
-    "@qubejs/core": "^0.3.0-next.6",
-    "@qubejs/scripts": "^0.3.0-next.6",
-    "@qubejs/web-react": "^0.3.0-next.6",
+    "@qubejs/cms": "^0.4.0-next.7",
+    "@qubejs/core": "^0.4.0-next.7",
+    "@qubejs/scripts": "^0.4.0-next.7",
+    "@qubejs/ui-material-base": "^0.4.0-next.7",
+    "@qubejs/web-react": "^0.4.0-next.7",
     "@reduxjs/toolkit": "^1.8.3",
     "@swc/helpers": "~0.5.0",
     "axios": "^1.0.0",

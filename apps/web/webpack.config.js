@@ -17,10 +17,10 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
   }
   config.output.filename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
   config.output.chunkFilename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
-  config.plugins[5].options.filename = `static/[name]${
+  config.plugins[5].options.filename = `[name]${
     VERSION ? `.${VERSION}` : ''
   }.css`;
-  config.plugins[5].options.chunkFilename = `static/[name]${
+  config.plugins[5].options.chunkFilename = `[name]${
     VERSION ? `.${VERSION}` : ''
   }.css`;
   // Update the webpack config as needed here.

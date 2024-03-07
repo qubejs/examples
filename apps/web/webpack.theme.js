@@ -9,12 +9,12 @@ const PUBLIC_URL = process.env.PUBLIC_URL || '/';
 
 module.exports = {
   entry: {
-    gray: [`./apps/web/src/styles/themes/ice/index.scss`],
+    ice: [`./apps/web/src/styles/themes/ice/index.scss`],
   },
   mode: 'production',
   // devtool: 'source-map',
   output: {
-    path: process.argv.indexOf('--mode=production') === -1 ? paths.webAssets : paths.distWeb,
+    path: process.argv.indexOf('--mode=production') === -1 ? `${paths.webAssets}/static` : paths.distWeb,
     filename: `static/js/[name]/out.js`,
     assetModuleFilename: `media/[hash][ext][query]`,
     publicPath: PUBLIC_URL,
@@ -67,8 +67,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: `static/[name]${VERSION ? `.${VERSION}` : ''}.css`,
-      chunkFilename: `static/[id]${VERSION ? `.${VERSION}` : ''}.css`,
+      filename: `[name]${VERSION ? `.${VERSION}` : ''}.css`,
+      chunkFilename: `[id]${VERSION ? `.${VERSION}` : ''}.css`,
     }),
   ],
 };

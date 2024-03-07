@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState } from 'react';
-import styles from './app.module.scss';
 import {
   Route,
   Routes,
@@ -11,15 +10,14 @@ import {
   // RouterProvider,
   // createHashRouter,
 } from 'react-router-dom';
-import { containers, storage, utils, ThemeProvider } from '@qubejs/web-react';
+import { containers, storage, utils, plugins } from '@qubejs/web-react';
+import { ThemeProvider } from '@qubejs/ui-material-base/theme.esm';
 import { Provider } from 'react-redux';
-// import { ThemeProvider } from '@emotion/react';
 import app_containers from '../containers';
 import app_templates from '../templates';
 import { useEffect } from 'react';
 import { store } from '../redux';
 import config from '../config';
-import theme from '../styles/themes/main/main.theme';
 
 const { DynamicContent, Application } = containers;
 
@@ -28,17 +26,21 @@ storage.containers.set(app_containers);
 storage.containers.set(app_templates);
 utils.redirect.setUrlMapping(config.urlMapping);
 
-export function App() {
+export function App({ themes }: any) {
   const navigate = useNavigate();
   const params = useParams();
   const [currentTheme, setTheme] = useState('main');
-  const [inProgress, setInProgress] = useState(false);
+  const [inProgress, setInProgress] = useState(true);
   const { Snackbar } = storage.components.get();
   const location = useLocation();
   useEffect(() => {
     utils.redirect.setNavigate(navigate);
   }, []);
   const onThemeChange = (newTHeme: string) => {
+    const preFix =
+      utils.win.getWindow().APP_CONFIG.environment === 'development'
+        ? ''
+        : '';
     if (newTHeme !== currentTheme) {
       console.log(`${currentTheme} changed to : ${newTHeme}`);
       setTheme(newTHeme);
@@ -47,16 +49,17 @@ export function App() {
       let regExMatch: any;
       for (let i = 0; i < document.head.children.length; i++) {
         const item = document.head.children[i] as HTMLLinkElement;
-        regExMatch = item.href?.match('/(.*)/(.*).([0-9].[0-9].[0-9].css)$');
+        regExMatch = item.href?.match('(.*).([0-9].[0-9].[0-9].css)$');
         if (item?.tagName === 'LINK' && item?.href && regExMatch) {
           itemFound = item;
           break;
         }
       }
-      if (itemFound && currentTheme !== regExMatch[2]) {
+      console.log(regExMatch);
+      if (itemFound && currentTheme !== regExMatch[1]) {
         itemFound.setAttribute(
           'href',
-          [`/${currentTheme}.`, regExMatch[3]].join('')
+          [`${preFix}${currentTheme}.`, regExMatch[2]].join('')
         );
         document.head.appendChild(itemFound);
       } else {
@@ -64,7 +67,9 @@ export function App() {
         elem.setAttribute('rel', `stylesheet`);
         elem.setAttribute(
           'href',
-          `/static/${newTHeme}.${utils.win.getWindow().APP_CONFIG.appVersion}.css`
+          `${preFix}${newTHeme}.${
+            utils.win.getWindow().APP_CONFIG.appVersion
+          }.css`
         );
         document.head.appendChild(elem);
       }
@@ -73,18 +78,38 @@ export function App() {
       }, 500);
     }
   };
+  useEffect(() => {
+    Promise.all([
+      import('@qubejs/ui-material-base/basic.esm').then((uiMaterial) => {
+        plugins.register(uiMaterial);
+      }),
+      import('@qubejs/ui-material-base/data.esm').then((uiMaterial) => {
+        plugins.register(uiMaterial);
+      }),
+      import('@qubejs/ui-material-base/content.esm').then((uiMaterial) => {
+        plugins.register(uiMaterial);
+      }),
+    ]).then(() => {
+      setInProgress(false);
+    });
+  }, []);
   return (
     <div>
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <Application>
-            <Routes>
-              {/* <Route path="/" element={<NxWelcome title='Hello' />} /> */}
-              <Route path="/ho/*" element={<DynamicContent onThemeChange={onThemeChange} />} />
-              <Route path="*" element={<Navigate to="/ho/home" />} />
-            </Routes>
-          </Application>
-        </ThemeProvider>
+        {!inProgress && (
+          <ThemeProvider theme={themes[currentTheme]}>
+            <Application>
+              <Routes>
+                {/* <Route path="/" element={<NxWelcome title='Hello' />} /> */}
+                <Route
+                  path="/ho/*"
+                  element={<DynamicContent onThemeChange={onThemeChange} />}
+                />
+                <Route path="*" element={<Navigate to="/ho/home" />} />
+              </Routes>
+            </Application>
+          </ThemeProvider>
+        )}
       </Provider>
     </div>
   );

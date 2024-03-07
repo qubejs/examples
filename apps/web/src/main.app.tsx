@@ -27,7 +27,7 @@ class AppRoot {
     const RouterToUse = cordova.isApp() ? HashRouter : BrowserRouter;
     root.render(
       <RouterToUse>
-        <App />
+        <App themes={themes} />
       </RouterToUse>
     );
   }
