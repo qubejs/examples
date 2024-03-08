@@ -18,6 +18,7 @@ import app_templates from '../templates';
 import { useEffect } from 'react';
 import { store } from '../redux';
 import config from '../config';
+import Content from '../templates/Content';
 
 const { DynamicContent, Application } = containers;
 
@@ -38,9 +39,7 @@ export function App({ themes }: any) {
   }, []);
   const onThemeChange = (newTHeme: string) => {
     const preFix =
-      utils.win.getWindow().APP_CONFIG.environment === 'development'
-        ? ''
-        : '';
+      utils.win.getWindow().APP_CONFIG.environment === 'development' ? '' : '';
     if (newTHeme !== currentTheme) {
       console.log(`${currentTheme} changed to : ${newTHeme}`);
       setTheme(newTHeme);
@@ -99,14 +98,16 @@ export function App({ themes }: any) {
         {!inProgress && (
           <ThemeProvider theme={themes[currentTheme]}>
             <Application>
-              <Routes>
-                {/* <Route path="/" element={<NxWelcome title='Hello' />} /> */}
-                <Route
-                  path="/ho/*"
-                  element={<DynamicContent onThemeChange={onThemeChange} />}
-                />
-                <Route path="*" element={<Navigate to="/ho/home" />} />
-              </Routes>
+              <Content>
+                <Routes>
+                  {/* <Route path="/" element={<NxWelcome title='Hello' />} /> */}
+                  <Route
+                    path="/ho/*"
+                    element={<DynamicContent onThemeChange={onThemeChange} />}
+                  />
+                  <Route path="*" element={<Navigate to="/ho/home" />} />
+                </Routes>
+              </Content>
             </Application>
           </ThemeProvider>
         )}

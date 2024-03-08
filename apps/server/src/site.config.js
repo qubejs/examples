@@ -10,7 +10,7 @@ module.exports = {
     // },
   },
   siteMap: {
-    theme: 'ice',
+    theme: 'main',
     maxNavigationLevel: 2,
     appVersion: packageJson.version,
     title: 'Sandbox',
