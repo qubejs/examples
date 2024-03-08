@@ -124,7 +124,7 @@ const themeopts: any = {
   shadows: Array(25).fill('none'),
   typography: {
     fontFamily: 'OpenSans',
-    fontSize: 16,
+    fontSize: 12,
     useNextVariants: true,
   },
 };

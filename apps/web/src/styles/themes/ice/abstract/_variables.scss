@@ -3,10 +3,7 @@ $bootstrap-sass-asset-helper: false ;
 //
 // Variables
 // --------------------------------------------------
-$header-font-family: Montserrat,Helvetica,Arial,Lucida,sans-serif;
-$header-serif-font-family: Montserrat,Helvetica,Arial,Lucida,sans-serif;
-$paragraph-font-family: 'OpenSans', Arial;
-$text-font-family: 'OpenSans', Arial;
+
 //== Colors
 //
 
@@ -189,3 +186,8 @@ $t8-font-size: 8px;
 
 $screen-lxs: 576px;
 
+:root {
+  --header-font-family: 'Montserrat';
+  --paragraph-font-family: 'OpenSans';
+  --text-font-family: 'OpenSans';
+}

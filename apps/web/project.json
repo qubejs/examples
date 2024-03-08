@@ -190,6 +190,7 @@
     },
 
     "serve": {
+      "dependsOn": ["build-themes-local"],
       "executor": "@nx/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
