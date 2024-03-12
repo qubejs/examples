@@ -25,4 +25,4 @@ jobs:
       - name: Build
         run: |
           npm install
-          npx nx run-many -t dist
+          npx nx dist web
