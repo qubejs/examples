@@ -54,8 +54,8 @@ export function App({ themes }: any) {
           break;
         }
       }
-      console.log(regExMatch);
-      if (itemFound && currentTheme !== regExMatch[1]) {
+      const name = regExMatch[1] ? regExMatch[1].substr(regExMatch[1].lastIndexOf('/') + 1);
+      if (itemFound && currentTheme !== name) {
         itemFound.setAttribute(
           'href',
           [`${preFix}${currentTheme}.`, regExMatch[2]].join('')
