@@ -54,7 +54,7 @@ export function App({ themes }: any) {
           break;
         }
       }
-      const name = regExMatch[1] ? regExMatch[1].substr(regExMatch[1].lastIndexOf('/') + 1);
+      const name = regExMatch[1] ? regExMatch[1].substr(regExMatch[1].lastIndexOf('/') + 1) : '';
       if (itemFound && currentTheme !== name) {
         itemFound.setAttribute(
           'href',
